@@ -1,4 +1,5 @@
 com/joaov/spring/jpa/h2/repository/FarmRepository.class
+com/joaov/spring/jpa/h2/SwaggerConfig.class
 com/joaov/spring/jpa/h2/SpringBootJpaH2Application.class
 com/joaov/spring/jpa/h2/controller/FarmsController.class
 com/joaov/spring/jpa/h2/model/Farm.class

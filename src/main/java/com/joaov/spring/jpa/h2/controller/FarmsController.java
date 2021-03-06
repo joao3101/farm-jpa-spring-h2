@@ -30,7 +30,7 @@ public class FarmsController {
 	FarmRepository farmRepository;
 
 	@GetMapping("/farm")
-	public ResponseEntity<List<Farm>> getAllFarms(@RequestParam(required = false) String title) {
+	public ResponseEntity<List<Farm>> getAllFarms() {
 		try {
 			List<Farm> farm = new ArrayList<Farm>();
 

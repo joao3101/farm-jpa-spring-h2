@@ -30,7 +30,7 @@ public class AnimalsController {
 	AnimalsRepository animalsRepository;
 
 	@GetMapping("/animals")
-	public ResponseEntity<List<Animals>> getAllAnimalss(@RequestParam(required = false) String title) {
+	public ResponseEntity<List<Animals>> getAllAnimals() {
 		try {
 			List<Animals> animals = new ArrayList<Animals>();
 
@@ -92,7 +92,7 @@ public class AnimalsController {
 	}
 
 	@DeleteMapping("/animals")
-	public ResponseEntity<HttpStatus> deleteAllAnimalss() {
+	public ResponseEntity<HttpStatus> deleteAllAnimals() {
 		try {
 			animalsRepository.deleteAll();
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
