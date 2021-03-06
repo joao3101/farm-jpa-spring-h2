@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.joaov.spring.jpa.h2.model.Farm;
@@ -58,10 +57,12 @@ public class FarmsController {
 	}
 
 	@PostMapping("/farm")
-	public ResponseEntity<Farm> createFarm(@RequestBody Farm farm) {
+	public ResponseEntity<Farm> createFarm(@RequestBody List<Farm> farm) {
 		try {
-			Farm _farm = farmRepository.save(new Farm(farm.getName()));
-			return new ResponseEntity<>(_farm, HttpStatus.CREATED);
+			for (Farm _farm : farm) {
+				_farm = farmRepository.save(new Farm(_farm.getName()));
+			}
+			return new ResponseEntity<>(HttpStatus.CREATED);
 		} catch (Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}

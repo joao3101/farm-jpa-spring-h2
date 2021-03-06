@@ -94,4 +94,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 João Victor de Carvalho Silva - [LinkedIn](https://www.linkedin.com/in/joao-victor-de-carvalho-silva/)
 
-Project Link: [https://github.com/joao3101/node-url-shortener](https://github.com/joao3101/node-url-shortener)
+Project Link: [https://github.com/joao3101/farm-jpa-spring-h2](https://github.com/joao3101/node-url-shortener)

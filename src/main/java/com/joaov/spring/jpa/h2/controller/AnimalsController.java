@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.joaov.spring.jpa.h2.model.Animals;
@@ -58,10 +57,12 @@ public class AnimalsController {
 	}
 
 	@PostMapping("/animals")
-	public ResponseEntity<Animals> createAnimals(@RequestBody Animals animals) {
+	public ResponseEntity<Animals> createAnimals(@RequestBody List<Animals> animals) {
 		try {
-			Animals _animals = animalsRepository.save(new Animals(animals.getTag(), animals.getFarm()));
-			return new ResponseEntity<>(_animals, HttpStatus.CREATED);
+			for (Animals _animals : animals) {
+				_animals = animalsRepository.save(new Animals(_animals.getTag(), _animals.getFarm()));
+			}
+			return new ResponseEntity<>(HttpStatus.CREATED);
 		} catch (Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
