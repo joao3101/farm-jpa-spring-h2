@@ -1,0 +1,4 @@
+2021-03-06 21:11:36 ERROR AnimalsController:71 - This is error : org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [FKDWALXT39NO0GS365BAB0GBCLM]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+2021-03-06 21:24:59 ERROR AnimalsController:68 - Couldn't save files because the input is wrong.
+2021-03-06 21:29:16 ERROR AnimalsController:116 - This is error : org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint ["FKDWALXT39NO0GS365BAB0GBCLM: PUBLIC.ANIMALS FOREIGN KEY(FARM_ID) REFERENCES PUBLIC.FARMS(ID) (2)"; SQL statement:
+delete from farms where id=? [23503-200]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement

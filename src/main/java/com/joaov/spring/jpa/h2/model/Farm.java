@@ -2,6 +2,8 @@ package com.joaov.spring.jpa.h2.model;
 
 import javax.persistence.*;
 
+import com.sun.istack.NotNull;
+
 import io.swagger.annotations.ApiModelProperty;
 
 @Entity
@@ -15,6 +17,7 @@ public class Farm {
 
 	@Column(name = "name")
 	@ApiModelProperty(value = "Nome da fazenda")
+	@NotNull
 	private String name;
 
 	public Farm() {

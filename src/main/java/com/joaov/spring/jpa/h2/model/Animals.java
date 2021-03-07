@@ -2,6 +2,8 @@ package com.joaov.spring.jpa.h2.model;
 
 import javax.persistence.*;
 
+import com.sun.istack.NotNull;
+
 import io.swagger.annotations.ApiModelProperty;
 
 @Entity
@@ -16,9 +18,11 @@ public class Animals {
 	@OneToOne
 	@JoinColumn(name = "farm_id")
 	@ApiModelProperty(value = "Fazenda a ser associada ao animal")
+	@NotNull
 	private Farm farm;
 
 	@Column(name = "tag")
+	@NotNull
 	private String tag;
 
 	public Animals() {
