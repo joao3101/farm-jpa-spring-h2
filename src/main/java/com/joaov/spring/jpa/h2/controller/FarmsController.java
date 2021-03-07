@@ -66,6 +66,8 @@ public class FarmsController {
 	@PostMapping("/farm")
 	public ResponseEntity<Farm> createFarm(@RequestBody List<Farm> farms) {
 		try {
+			// This check is necessary because there is a bug for the not null anotation
+			// regarding H2
 			for (Farm farm : farms) {
 				if (farm.getName() == null || farm.getName() == "") {
 					logger.error("Couldn't save files because the input is wrong.");
